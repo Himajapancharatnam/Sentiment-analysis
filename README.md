@@ -66,4 +66,4 @@ To run this project locally:
 3.  **Start Application**: `npm run dev`
 
 ---
-*Built by [Your Name] as a showcase of AI integration in modern web development.*
+*Built by Himaja.P as a showcase of AI integration in modern web development.*
