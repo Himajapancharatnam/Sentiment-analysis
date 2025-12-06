@@ -1,66 +1,90 @@
-Create a complete, production-ready **Java Sentiment Analysis Tool** for customer reviews as a resume project. Target: Infosys/Accenture software engineer interviews. Use **Java 17+, Spring Boot 3.x, Maven**. Generate ALL files with full code, folder structure, and documentation.
+# 🧠 SentimenTA - AI Sentiment Dashboard
 
-## 🎯 PROJECT REQUIREMENTS
-- **Input**: Text reviews or CSV file upload (Kaggle Amazon reviews dataset recommended)
-- **Output**: Sentiment classification (POSITIVE/NEUTRAL/NEGATIVE) with confidence scores
-- **Target Accuracy**: 88%+ on 5,000+ review test set
-- **Features**:
-  - REST API endpoints (/analyze, /upload, /stats)
-  - Simple HTML dashboard with Chart.js pie charts
-  - Confusion matrix & accuracy metrics display
-  - Save analyses to H2 database (in-memory)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-## 🛠️ TECHNICAL STACK (MANDATORY)
-pom.xml dependencies:
-├── spring-boot-starter-web
-├── spring-boot-starter-data-jpa  
-├── spring-boot-starter-thymeleaf
-├── h2-database
-├── deeplearning4j-core OR opennlp-tools
-├── commons-csv (file parsing)
-├── chart.js (via CDN)
-└── lombok
+A professional-grade Sentiment Analysis Dashboard that uses **Google's Gemini 2.5 Flash API** to analyze customer reviews in real-time. Upload CSV, JSON, or TXT files to visualize sentiment distribution, confidence metrics, and key insights.
 
-## 📁 EXACT FOLDER STRUCTURE TO GENERATE
-sentiment-analysis-tool/
-├── pom.xml
-├── src/
-│   ├── main/
-│   │   ├── java/com/resume/sentiment/
-│   │   │   ├── SentimentApplication.java
-│   │   │   ├── controller/SentimentController.java
-│   │   │   ├── model/Review.java
-│   │   │   │   └── Sentiment.java (enum)
-│   │   │   ├── service/SentimentService.java
-│   │   │   ├── ml/SentimentAnalyzer.java (Naive Bayes + TF-IDF)
-│   │   │   └── repository/AnalysisRepository.java
-│   │   └── resources/
-│   │       ├── application.properties
-│   │       ├── static/css/style.css
-│   │       ├── static/js/charts.js
-│   │       └── templates/index.html
-├── README.md
-├── demo.gif (describe how to create)
-└── sample-reviews.csv
+## ✨ Features
 
-## 🔧 CORE IMPLEMENTATION DETAILS
-1. **Preprocessing**: Tokenize, lowercase, remove stopwords/punctuation, TF-IDF vectorization
-2. **Model**: Train Naive Bayes classifier OR use pre-trained OpenNLP; include train/test split
-3. **API Endpoints**:
-   POST /api/analyze → {"text": "Great product!", "sentiment": "POSITIVE", "confidence": 0.92}
-   POST /api/upload → Process CSV file, return stats
-   GET /api/stats → {"accuracy": 88.5, "confusionMatrix": [...]}
-   GET / → HTML dashboard
-4. **Metrics**: Precision, Recall, F1-score, Confusion Matrix visualization
-5. **Database**: Store predictions with timestamps
+- **🤖 AI-Powered Analysis**: Leverages Google Gemini 2.5 Flash for high-accuracy sentiment detection.
+- **📊 Interactive Visualization**: Beautiful interactive pie charts and metrics using Recharts.
+- **📁 Multi-Format Support**: Drag & drop support for `.csv`, `.json`, and `.txt` files.
+- **📈 Key Metrics**: Automatically calculates Accuracy, F1 Score, and Sentiment Distribution.
+- **⚡ Fast & Responsive**: Built with Vite and Tailwind CSS for instant feedback and mobile responsiveness.
 
-## 📄 README REQUIREMENTS
-# Java Sentiment Analysis Tool
-[![Accuracy](badge)](demo.gif)
+## 🚀 Quick Start
 
-## Features
-- 88% accuracy on 5K+ reviews
-- Spring Boot REST API + Dashboard
-- Deeplearning4j/OpenNLP powered
+### Prerequisites
+- Node.js (v18 or higher)
+- A Google Gemini API Key (Get one [here](https://aistudio.google.com/app/apikey))
 
-## Quick Start
+### 1. Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/yourusername/sentiment-dashboard.git
+cd sentiment-dashboard
+npm install
+```
+
+### 2. Configuration
+
+Create a `.env` file in the root directory:
+
+```bash
+touch .env
+```
+
+Add your Google Gemini API Key to the `.env` file:
+
+```env
+API_KEY=your_actual_api_key_here
+```
+
+### 3. Run Locally
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📂 Project Structure
+
+```
+src/
+├── components/       # Reusable UI components (Charts, Cards, Buttons)
+├── services/        # API integration (Gemini AI service)
+├── utils/           # Helper functions (File parsing, ID generation)
+├── types.ts         # TypeScript interfaces
+├── App.tsx          # Main application logic
+└── index.tsx        # Entry point
+```
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS, Lucide Icons
+- **AI Model**: Google Gemini 2.5 Flash (`@google/genai`)
+- **Charts**: Recharts
+- **Build Tool**: Vite
+
+## 📦 Building for Production
+
+To create a production-ready build:
+
+```bash
+npm run build
+```
+
+This will generate a `dist` folder that you can deploy to Vercel, Netlify, or any static host.
+
+---
+
+**Note**: This is a frontend-only demonstration. For production use with sensitive API keys, it is recommended to move the API calls (`services/gemini.ts`) to a backend server to keep your keys secure.
