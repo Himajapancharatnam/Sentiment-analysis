@@ -1,90 +1,69 @@
-# 🧠 SentimenTA - AI Sentiment Dashboard
+# 🧠 SentimenTA - AI Sentiment Analysis Dashboard
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
+![AI Model](https://img.shields.io/badge/AI%20Model-Gemini%202.5%20Flash-violet)
+![Tech](https://img.shields.io/badge/Stack-React%20%7C%20TypeScript%20%7C%20Tailwind-blue)
 
-A professional-grade Sentiment Analysis Dashboard that uses **Google's Gemini 2.5 Flash API** to analyze customer reviews in real-time. Upload CSV, JSON, or TXT files to visualize sentiment distribution, confidence metrics, and key insights.
+**SentimenTA** is a modern, high-performance dashboard designed to automate the process of analyzing customer feedback. By leveraging Google's **Gemini 2.5 Flash** model, it transforms raw text data into actionable business intelligence in seconds.
 
-## ✨ Features
+## 📖 Project Overview
 
-- **🤖 AI-Powered Analysis**: Leverages Google Gemini 2.5 Flash for high-accuracy sentiment detection.
-- **📊 Interactive Visualization**: Beautiful interactive pie charts and metrics using Recharts.
-- **📁 Multi-Format Support**: Drag & drop support for `.csv`, `.json`, and `.txt` files.
-- **📈 Key Metrics**: Automatically calculates Accuracy, F1 Score, and Sentiment Distribution.
-- **⚡ Fast & Responsive**: Built with Vite and Tailwind CSS for instant feedback and mobile responsiveness.
+In the age of big data, businesses receive thousands of reviews across multiple platforms. Manually processing this data is slow, bias-prone, and unscalable. 
 
-## 🚀 Quick Start
+**SentimenTA** solves this by providing an interface where users can upload bulk review datasets (CSV, JSON, TXT). The application processes this data through a Large Language Model (LLM) to determine:
+1.  **Sentiment Polarity**: Positive, Negative, or Neutral.
+2.  **Confidence Score**: How certain the AI is about its prediction.
+3.  **Macro Trends**: Overall distribution of customer satisfaction.
 
-### Prerequisites
-- Node.js (v18 or higher)
-- A Google Gemini API Key (Get one [here](https://aistudio.google.com/app/apikey))
+## ✨ Key Features
 
-### 1. Installation
+### 1. 🤖 Advanced AI Analysis
+- Utilizes **Google Gemini 2.5 Flash** for low-latency, high-accuracy classification.
+- Capable of understanding nuance, sarcasm, and context better than traditional NLP libraries.
 
-Clone the repository and install dependencies:
+### 2. 📊 Real-Time Visualization
+- **Interactive Pie Charts**: Visual breakdown of sentiment distribution.
+- **Key Metrics Cards**: Instant view of Total Processed, Accuracy, F1 Score, and Positive Ratios.
+- **Confidence Tracking**: Visual progress bars showing the model's certainty for every single review.
 
-```bash
-git clone https://github.com/yourusername/sentiment-dashboard.git
-cd sentiment-dashboard
-npm install
-```
+### 3. 📂 Universal File Support
+- **Drag & Drop Interface**: Seamless file uploading.
+- **Format Support**: 
+  - `.csv` (Spreadsheets)
+  - `.json` (Structured Data)
+  - `.txt` (Raw Text Logs)
 
-### 2. Configuration
+### 4. ⚡ Modern Architecture
+- **Zero-Config Deployment**: Built to be deployed instantly to Vercel, Netlify, or Heroku.
+- **Responsive Design**: Fully functional on desktop, tablet, and mobile devices.
+- **Client-Side Optimization**: Efficient parsing logic to handle large files without crashing the browser.
 
-Create a `.env` file in the root directory:
+## 🛠️ Technical Architecture
 
-```bash
-touch .env
-```
+The application is built using a modern frontend stack emphasizing type safety and performance.
 
-Add your Google Gemini API Key to the `.env` file:
+| Component | Technology | Description |
+|-----------|------------|-------------|
+| **Core Framework** | React 18 | Component-based UI architecture. |
+| **Language** | TypeScript | Ensures type safety and reduces runtime errors. |
+| **Styling** | Tailwind CSS | Utility-first CSS for rapid, responsive UI development. |
+| **AI Integration** | Google GenAI SDK | Direct integration with Gemini 2.5 Flash API. |
+| **Visualization** | Recharts | Composable charting library built on SVG components. |
+| **Build Tool** | Vite | Next-generation frontend tooling for instant server start. |
 
-```env
-API_KEY=your_actual_api_key_here
-```
+## 🎯 Use Cases
 
-### 3. Run Locally
+- **Product Managers**: Quickly gauge reaction to a new feature launch.
+- **Customer Support**: Identify negative reviews that require urgent attention.
+- **Market Researchers**: Analyze competitor reviews to find market gaps.
 
-Start the development server:
+## 🚀 Setup & Run
 
-```bash
-npm run dev
-```
+To run this project locally:
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 📂 Project Structure
-
-```
-src/
-├── components/       # Reusable UI components (Charts, Cards, Buttons)
-├── services/        # API integration (Gemini AI service)
-├── utils/           # Helper functions (File parsing, ID generation)
-├── types.ts         # TypeScript interfaces
-├── App.tsx          # Main application logic
-└── index.tsx        # Entry point
-```
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React 18, TypeScript
-- **Styling**: Tailwind CSS, Lucide Icons
-- **AI Model**: Google Gemini 2.5 Flash (`@google/genai`)
-- **Charts**: Recharts
-- **Build Tool**: Vite
-
-## 📦 Building for Production
-
-To create a production-ready build:
-
-```bash
-npm run build
-```
-
-This will generate a `dist` folder that you can deploy to Vercel, Netlify, or any static host.
+1.  **Install Dependencies**: `npm install`
+2.  **Configure API Key**: Create a `.env` file and add `API_KEY=your_gemini_key`.
+3.  **Start Application**: `npm run dev`
 
 ---
-
-**Note**: This is a frontend-only demonstration. For production use with sensitive API keys, it is recommended to move the API calls (`services/gemini.ts`) to a backend server to keep your keys secure.
+*Built by [Your Name] as a showcase of AI integration in modern web development.*
